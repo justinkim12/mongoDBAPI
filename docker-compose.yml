@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
   springboot-mongo:
-    image: spring-app:1.0.0
+    image: spring-app:1.1.0
     container_name: springboot-mongo
     ports:
       - 8080:8080

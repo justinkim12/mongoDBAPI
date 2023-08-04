@@ -1,15 +1,18 @@
 package api.mongo.nosql.repository;
 
+import api.mongo.nosql.model.MovieDTO;
 import api.mongo.nosql.model.TodoDTO;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-//@Repository
-public interface TodoRepository extends MongoRepository<TodoDTO,String> {
+@Repository
+@Primary
+public interface MovieRepository extends MongoRepository<MovieDTO,String> {
 
-    @Query("{'todo': ?0}")
-    Optional<TodoDTO> findByTodo(String todo);
+    @Query("{'title': ?0}")
+    Optional<MovieDTO> findByTitle(String title);
 }
