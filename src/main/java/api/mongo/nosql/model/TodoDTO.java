@@ -4,11 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -29,7 +32,15 @@ public class TodoDTO {
     @NotNull(message = "completed cannot be null")
     private Boolean completed;
 
+
+    private Map<String, Object> meta;
+
     private Date createdAt;
     private Date updatedAt;
 
+    public TodoDTO(String todo, String description, Boolean completed) {
+        this.todo = todo;
+        this.description = description;
+        this.completed = completed;
+    }
 }
