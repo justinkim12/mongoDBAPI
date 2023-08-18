@@ -36,8 +36,8 @@ public class MovieController {
         } catch (MovieCollectionException e) {
             return new ResponseEntity<>(e.getMessage(), CONFLICT);
         }
-
     }
+
     @GetMapping("/movies/{id}")
     public ResponseEntity<?> getSingleTodo(@PathVariable("id") String id) {
         try {

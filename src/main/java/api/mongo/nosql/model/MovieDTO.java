@@ -21,7 +21,7 @@ public class MovieDTO {
     private String movieId;
 
     private String title;
-    private String genres;
+    private String genres; //genres Array
     private Integer year;
 
     private Map<String, Object> meta;
