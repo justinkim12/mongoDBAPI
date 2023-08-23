@@ -6,7 +6,7 @@ services:
     ports:
       - 27017:27017
   springboot:
-    image: spring-app:1.2.0
+    image: devkimm/springboot-nosql:latest
     container_name: springboot-mongo
     ports:
       - 8080:8080
