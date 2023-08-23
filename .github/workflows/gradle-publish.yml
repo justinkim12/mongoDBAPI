@@ -63,6 +63,7 @@ jobs:
           script: |
             docker pull ${{ secrets.DOCKER_USERNAME }}/springboot-nosql:latest
             docker stop $(docker ps -a -q)
+            docker rm mongodb
             docker run -d --name mongodb -p 27017:27017 -v mongo_data:/data/db mongo:3.2.4
             docker run -d --log-driver=syslog -p 8080:8080 --link mongodb ${{ secrets.DOCKER_USERNAME }}/springboot-nosql:latest
             docker rm $(docker ps --filter 'status=exited' -a -q)
