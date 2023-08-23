@@ -5,8 +5,8 @@ services:
     container_name: "mongodb"
     ports:
       - 27017:27017
-  springboot-mongo:
-    image: spring-app:1.1.0
+  springboot:
+    image: spring-app:1.2.0
     container_name: springboot-mongo
     ports:
       - 8080:8080
