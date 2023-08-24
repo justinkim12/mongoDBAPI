@@ -7,10 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolationException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -55,6 +52,19 @@ public class MovieService {
         } else {
             throw new CollectionException(CollectionException.NotFoundException(id));
         }
+    }
+
+    public void updateMovieDetails(String id, Object input) throws CollectionException{
+        Optional<MovieDTO> optionalMovie = repository.findById(id);
+        if (optionalMovie.isEmpty())
+            throw new CollectionException(CollectionException.NotFoundException(id));
+
+        MovieDTO movieDTO = optionalMovie.get();
+        if (input instanceof ArrayList)
+            movieDTO.setRelated_movie((ArrayList<String>) input);
+        else if(input instanceof Map)
+            movieDTO.setMeta((Map<String, Object>) input);
+        repository.save(movieDTO);
     }
 
     public void deleteMovieByID(String id) throws CollectionException {

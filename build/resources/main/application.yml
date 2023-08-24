@@ -1,6 +1,6 @@
 spring:
   data:
     mongodb:
-      database: todo-manage-api
+      database: movieRecommendation
       host: mongodb
       port: 27017

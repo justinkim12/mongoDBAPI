@@ -58,6 +58,21 @@ public class MovieController {
 
         }
     }
+
+    @PutMapping("/movies/details/{id}")
+    public ResponseEntity<?> updateById2(@PathVariable("id") String id, @RequestBody Object movieDTO) {
+        try {
+            movieService.updateMovieDetails(id, movieDTO);
+            return new ResponseEntity<>("Update Todo with id " + id, OK);
+        } catch (ConstraintViolationException e) {
+            return new ResponseEntity<>(e.getMessage(), UNPROCESSABLE_ENTITY);
+        } catch (CollectionException e) {
+            return new ResponseEntity<>(e.getMessage(), NOT_FOUND);
+
+        }
+    }
+
+
     @DeleteMapping("/movies/{id}")
     public ResponseEntity<?> deleteById(@PathVariable("id") String id) {
         try {
