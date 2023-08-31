@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="api.mongo.nosql.Domain.service.UserServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-08-31T05:04:58" hostname="DESKTOP-F3ILP0D" time="6.612">
+  <properties/>
+  <testcase name="testAddSimilarity()" classname="api.mongo.nosql.Domain.service.UserServiceTest" time="6.612"/>
+  <system-out><![CDATA[2023-08-31 14:04:58.939  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [api.mongo.nosql.Domain.service.UserServiceTest], using SpringBootContextLoader
+2023-08-31 14:04:58.941  INFO 44136 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [api.mongo.nosql.Domain.service.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-08-31 14:04:58.941  INFO 44136 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [api.mongo.nosql.Domain.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-31 14:04:58.956  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration api.mongo.nosql.NosqlApplication for test class api.mongo.nosql.Domain.service.UserServiceTest
+2023-08-31 14:04:58.960  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-08-31 14:04:58.961  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@e3275d3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1bfafce1, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@138a952f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@767cc126, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6bfdaed7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@272c5abd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@60c8909a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@70ad0854, org.springframework.test.context.event.EventPublishingTestExecutionListener@76208b80, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@339cde4b, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1774c4e2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@f0381f0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7d8d671b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@28b68067, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@19540247]
+2023-08-31 14:05:01.619  WARN 44136 --- [    Test worker] o.s.d.n.c.m.DefaultNeo4jIsNewStrategy    : Instances of class api.mongo.nosql.Domain.model.User.UserDTO with an assigned id will always be treated as new without version property!
+2023-08-31 14:05:02.880  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ WITH collect(id(userDTO)) AS __sn__ RETURN __sn__
+	                                                               ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:02.978  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:02.978  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                                                 ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:02.978  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.102  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                                                                                                                                                                                                                                                                        ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.102  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                                                                                                                                      ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.102  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                          ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.601  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ WITH collect(id(userDTO)) AS __sn__ RETURN __sn__
+	                                                               ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.688  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.689  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                                                 ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.690  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.792  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                                                                                                                                                                                                                                                                        ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.793  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                                                                                                                                      ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:03.794  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                          ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:04.544  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	UNWIND $__relationships__ AS row WITH row MATCH (startNode:`User`) WHERE startNode.id = row.fromId MATCH (endNode) WHERE id(endNode) = row.toId CREATE (startNode)-[relProps:`SIMILAR_TO`]->(endNode) SET relProps += row.__properties__ RETURN id(relProps)
+	                                                                                                                                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:04.546  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	UNWIND $__relationships__ AS row WITH row MATCH (startNode:`User`) WHERE startNode.id = row.fromId MATCH (endNode) WHERE id(endNode) = row.toId CREATE (startNode)-[relProps:`SIMILAR_TO`]->(endNode) SET relProps += row.__properties__ RETURN id(relProps)
+	                                                                                                                         ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.054  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ WITH collect(id(userDTO)) AS __sn__ RETURN __sn__
+	                                                               ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.146  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.147  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                                                 ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.148  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE userDTO.id = $__id__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.237  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE id(userDTO) IN $__ids__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                   ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.238  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE id(userDTO) IN $__ids__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                                                    ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.239  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE id(userDTO) IN $__ids__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                             ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.240  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (userDTO:`User`) WHERE id(userDTO) IN $__ids__ OPTIONAL MATCH (userDTO)-[__sr__:`SIMILAR_TO`]->(__srn__:`User`) WITH collect(id(userDTO)) AS __sn__, collect(id(__srn__)) AS __srn__, collect(id(__sr__)) AS __sr__ RETURN __sn__, __srn__, __sr__
+	                                                                                                                                                                   ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.340  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                                                                                                                                                                                                                                                                        ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.342  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                                                                                                                                      ^
+The query used a deprecated function: `id`.
+2023-08-31 14:05:05.342  WARN 44136 --- [    Test worker] org.springframework.data.neo4j.cypher    : Neo.ClientNotification.Statement.FeatureDeprecationWarning: This feature is deprecated and will be removed in future versions.
+	MATCH (rootNodeIds) WHERE id(rootNodeIds) IN $rootNodeIds WITH collect(rootNodeIds) AS n OPTIONAL MATCH ()-[relationshipIds]-() WHERE id(relationshipIds) IN $relationshipIds WITH n, collect(DISTINCT relationshipIds) AS __sr__ OPTIONAL MATCH (relatedNodeIds) WHERE id(relatedNodeIds) IN $relatedNodeIds WITH n, __sr__ AS __sr__, collect(DISTINCT relatedNodeIds) AS __srn__ UNWIND n AS rootNodeIds WITH rootNodeIds AS userDTO, __sr__, __srn__ RETURN userDTO AS __sn__, __sr__, __srn__
+	                          ^
+The query used a deprecated function: `id`.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

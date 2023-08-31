@@ -1,0 +1,6 @@
+spring:
+  data:
+    neo4j:
+      uri: ${neo4j_test_uri}
+      username: ${neo4j_test_user}
+      password: ${neo4j_test_password}
