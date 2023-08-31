@@ -1,6 +1,11 @@
 spring:
+  profiles:
+    active: test
+  mongodb:
+    embedded:
+      version: 3.2.3
   data:
     neo4j:
-      uri: ${neo4j_test_uri}
-      username: ${neo4j_test_user}
-      password: ${neo4j_test_password}
+      uri: neo4j+s://2be1f8f5.databases.neo4j.io
+      username: neo4j
+      password: mK8S8Fk_wCPJbdFIRQunlG4FLS3dxfXvuXjDdpwupzw

@@ -6,8 +6,7 @@ HELP.md
 !**/src/test/**/build/
 
 # Spring Boot application properties
-src/main/resources/application.properties
-
+src/test/resources/application.yml
 ### STS ###
 .apt_generated
 .classpath

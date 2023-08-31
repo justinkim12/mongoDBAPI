@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.238s</div>
+<div class="counter">0.250s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,22 +79,22 @@
 </thead>
 <tr>
 <td class="success">delete()</td>
-<td class="success">0.207s</td>
+<td class="success">0.212s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">findFail()</td>
-<td class="success">0.009s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">save()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">update()</td>
-<td class="success">0.014s</td>
+<td class="success">0.017s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -102,14 +102,14 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-08-31 14:05:06.076  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [api.mongo.nosql.Service.MovieServiceTest], using SpringBootContextLoader
-2023-08-31 14:05:06.079  INFO 44136 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [api.mongo.nosql.Service.MovieServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2023-08-31 14:05:06.079  INFO 44136 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [api.mongo.nosql.Service.MovieServiceTest]: MovieServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-08-31 14:05:06.096  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration api.mongo.nosql.NosqlApplication for test class api.mongo.nosql.Service.MovieServiceTest
-2023-08-31 14:05:06.098  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2023-08-31 14:05:06.098  INFO 44136 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2b9bbaa8, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@11771fd6, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1c512bb, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4d142b53, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3bac86a3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@128ca7af, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3bf52f8f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@57d7c511, org.springframework.test.context.event.EventPublishingTestExecutionListener@811d8d6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7f57a7a4, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6dcc7696, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@45ac973, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@28b7646, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@40239b34, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4e553d60]
-2023-08-31 14:05:06.194  INFO 44136 --- [       Thread-4] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2023-08-31T14:05:06.194+0900 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50377 #3 (3 connections now open)
-2023-08-31 14:05:06.195  INFO 44136 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:50339
+<pre>2023-08-31 15:37:20.755  INFO 15904 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [api.mongo.nosql.Service.MovieServiceTest], using SpringBootContextLoader
+2023-08-31 15:37:20.757  INFO 15904 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [api.mongo.nosql.Service.MovieServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-08-31 15:37:20.757  INFO 15904 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [api.mongo.nosql.Service.MovieServiceTest]: MovieServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-31 15:37:20.764  INFO 15904 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration api.mongo.nosql.NosqlApplication for test class api.mongo.nosql.Service.MovieServiceTest
+2023-08-31 15:37:20.766  INFO 15904 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2023-08-31 15:37:20.766  INFO 15904 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3bac86a3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@128ca7af, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3bf52f8f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@57d7c511, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@811d8d6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7f57a7a4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6dcc7696, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@45ac973, org.springframework.test.context.event.EventPublishingTestExecutionListener@28b7646, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@40239b34, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4e553d60, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1c966488, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@45f6181a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@19d0d1ab, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7e0941cc]
+2023-08-31 15:37:20.861  INFO 15904 --- [       Thread-4] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2023-08-31T15:37:20.861+0900 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50567 #3 (3 connections now open)
+2023-08-31 15:37:20.863  INFO 15904 --- [    Test worker] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:50529
 </pre>
 </span>
 </div>
@@ -121,7 +121,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at 2023. 8. 31. 오후 2:05:06</p>
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at 2023. 8. 31. 오후 3:37:21</p>
 </div>
 </div>
 </body>
