@@ -1,12 +1,9 @@
 package api.mongo.nosql.ApiWeb.controller;
 
 import api.mongo.nosql.Domain.exception.CollectionException;
-import api.mongo.nosql.Domain.model.MovieDTO;
-import api.mongo.nosql.Domain.model.RelationshipDTO;
-import api.mongo.nosql.Domain.service.MovieService;
+import api.mongo.nosql.Domain.model.Movie.RelationshipDTO;
 import api.mongo.nosql.Domain.service.RelationshipService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

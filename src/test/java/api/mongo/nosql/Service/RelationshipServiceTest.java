@@ -1,8 +1,8 @@
 package api.mongo.nosql.Service;
 
 import api.mongo.nosql.Domain.exception.CollectionException;
-import api.mongo.nosql.Domain.model.RelationshipDTO;
-import api.mongo.nosql.Domain.repository.RelationshipRepository;
+import api.mongo.nosql.Domain.model.Movie.RelationshipDTO;
+import api.mongo.nosql.Domain.mongoRepository.RelationshipRepository;
 import api.mongo.nosql.Domain.service.RelationshipService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
 public class RelationshipServiceTest {
@@ -24,9 +23,9 @@ public class RelationshipServiceTest {
 
     @BeforeEach
     void insert(){
-        RelationshipDTO dto1 = new RelationshipDTO("1","1","2",2.0);
-        RelationshipDTO dto2 = new RelationshipDTO("2","2","3",1.0);
-        RelationshipDTO dto3 = new RelationshipDTO("3","4","5",3.0);
+        RelationshipDTO dto1 = new RelationshipDTO("1","1","2",2.0F);
+        RelationshipDTO dto2 = new RelationshipDTO("2","2","3",1.0F);
+        RelationshipDTO dto3 = new RelationshipDTO("3","4","5",3.0F);
 
         service.createRelationship(dto1);
         service.createRelationship(dto2);
@@ -50,12 +49,12 @@ public class RelationshipServiceTest {
     void update() throws CollectionException {
         String movieId1 = "1";
         String movieId2 = "2";
-        Double similarity = 10.0;
+        Float similarity = 10.0F;
         RelationshipDTO dto = new RelationshipDTO(movieId1, movieId2, similarity);
 
         service.updateSimilarity(dto);
 
-        Double result = service.findRelationshipByMovieIDs(movieId1, movieId2).getSimilarity();
+        Float result = service.findRelationshipByMovieIDs(movieId1, movieId2).getSimilarity();
         Assertions.assertThat(result).isEqualTo(similarity);
 
     }

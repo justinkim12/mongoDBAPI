@@ -1,14 +1,12 @@
 package api.mongo.nosql.Domain.service;
 
 import api.mongo.nosql.Domain.exception.CollectionException;
-import api.mongo.nosql.Domain.model.RelationshipDTO;
-import api.mongo.nosql.Domain.repository.RelationshipRepository;
+import api.mongo.nosql.Domain.model.Movie.RelationshipDTO;
+import api.mongo.nosql.Domain.mongoRepository.RelationshipRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolationException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

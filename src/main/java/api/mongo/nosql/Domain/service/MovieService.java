@@ -1,8 +1,8 @@
 package api.mongo.nosql.Domain.service;
 
 import api.mongo.nosql.Domain.exception.CollectionException;
-import api.mongo.nosql.Domain.model.MovieDTO;
-import api.mongo.nosql.Domain.repository.MovieRepository;
+import api.mongo.nosql.Domain.model.Movie.MovieDTO;
+import api.mongo.nosql.Domain.mongoRepository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -54,6 +54,7 @@ public class MovieService {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public void updateMovieDetails(String id, Object input) throws CollectionException{
         Optional<MovieDTO> optionalMovie = repository.findById(id);
         if (optionalMovie.isEmpty())

@@ -4,3 +4,17 @@ spring:
       database: movieRecommendation
       host: mongodb
       port: 27017
+    neo4jdb:
+      driver:
+        uri: bolt://neo4jdb:7687
+        authentication:
+          username: neo4j
+          password: password
+        pool:
+          metrics-enabled: true
+  logging:
+    level:
+      org:
+        springframework:
+          data:
+            neo4j: DEBUG # 내부적으로 돌아가는 native cyperQuery를 로그로 찍어준다. 꼭 설정해주자.

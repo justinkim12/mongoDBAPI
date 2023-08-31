@@ -4,11 +4,26 @@ services:
     image: mongo:3.2.4
     container_name: "mongodb"
     ports:
-      - 27017:27017
-  springboot:
-    image: devkimm/springboot-nosql:latest
-    container_name: springboot-mongo
+      - "27017:27017"
+
+
+  neo4jdb:
+    image: neo4j:latest
+    container_name: "neo4jdb"
     ports:
-      - 8080:8080
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+        NEO4J_dbms_security_auth__enabled: "false"
+
+  spring-boot:
+    image: spring-app:1.3.0
+    container_name: springboot
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_NEO4J_URI=bolt://neo4jdb:7687
     links:
       - mongodb
+      - neo4jdb
+

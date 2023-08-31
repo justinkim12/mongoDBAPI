@@ -1,7 +1,7 @@
 package api.mongo.nosql.ApiWeb.controller;
 
 import api.mongo.nosql.Domain.exception.CollectionException;
-import api.mongo.nosql.Domain.model.MovieDTO;
+import api.mongo.nosql.Domain.model.Movie.MovieDTO;
 import api.mongo.nosql.Domain.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,18 +17,18 @@ import static org.springframework.http.HttpStatus.*;
 @RequestMapping("/api")
 public class MovieController {
 
-    private final MovieService movieService;
+    private final MovieService service;
 
     @GetMapping("/movies")
     public ResponseEntity<?> getAllMovies(){
-        List<MovieDTO> movies = movieService.getALlMovies();
+        List<MovieDTO> movies = service.getALlMovies();
         return new ResponseEntity<>(movies, movies.size() > 0 ? OK : NOT_FOUND);
     }
 
     @PostMapping("/movies")
     public ResponseEntity<?> createTodo(@RequestBody MovieDTO movieDTO) {
         try {
-            movieService.createMovie(movieDTO);
+            service.createMovie(movieDTO);
             return new ResponseEntity<MovieDTO>(movieDTO, OK);
         } catch (ConstraintViolationException e) {
             return new ResponseEntity<>(e.getMessage(), UNPROCESSABLE_ENTITY);
@@ -40,7 +40,7 @@ public class MovieController {
     @GetMapping("/movies/{id}")
     public ResponseEntity<?> getSingleTodo(@PathVariable("id") String id) {
         try {
-            return new ResponseEntity<>(movieService.getSingleMovie(id), OK);
+            return new ResponseEntity<>(service.getSingleMovie(id), OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), NOT_FOUND);
         }
@@ -49,7 +49,7 @@ public class MovieController {
     @PutMapping("/movies/{id}")
     public ResponseEntity<?> updateById(@PathVariable("id") String id, @RequestBody MovieDTO movieDTO) {
         try {
-            movieService.updateMovie(id, movieDTO);
+            service.updateMovie(id, movieDTO);
             return new ResponseEntity<>("Update Todo with id " + id, OK);
         } catch (ConstraintViolationException e) {
             return new ResponseEntity<>(e.getMessage(), UNPROCESSABLE_ENTITY);
@@ -62,7 +62,7 @@ public class MovieController {
     @PutMapping("/movies/details/{id}")
     public ResponseEntity<?> updateById2(@PathVariable("id") String id, @RequestBody Object movieDTO) {
         try {
-            movieService.updateMovieDetails(id, movieDTO);
+            service.updateMovieDetails(id, movieDTO);
             return new ResponseEntity<>("Update Todo with id " + id, OK);
         } catch (ConstraintViolationException e) {
             return new ResponseEntity<>(e.getMessage(), UNPROCESSABLE_ENTITY);
@@ -76,7 +76,7 @@ public class MovieController {
     @DeleteMapping("/movies/{id}")
     public ResponseEntity<?> deleteById(@PathVariable("id") String id) {
         try {
-            movieService.deleteMovieByID(id);
+            service.deleteMovieByID(id);
             return new ResponseEntity<>("Successfully deleted with id" + id, OK);
         } catch (CollectionException e) {
             return new ResponseEntity<>(e.getMessage(), NOT_FOUND);

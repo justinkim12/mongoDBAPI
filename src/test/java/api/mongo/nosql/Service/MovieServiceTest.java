@@ -1,13 +1,12 @@
 package api.mongo.nosql.Service;
 
 import api.mongo.nosql.Domain.exception.CollectionException;
-import api.mongo.nosql.Domain.model.MovieDTO;
-import api.mongo.nosql.Domain.repository.MovieRepository;
+import api.mongo.nosql.Domain.model.Movie.MovieDTO;
+import api.mongo.nosql.Domain.mongoRepository.MovieRepository;
 import api.mongo.nosql.Domain.service.MovieService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;

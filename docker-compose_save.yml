@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:3.2.4
+    container_name: "mongodb"
+    ports:
+      - 27017:27017
+#  neo4jdb:
+#    image: neo4j:latest
+#    container_name: "neo4jdb"
+#    ports:
+#      - 7474:7474
+#      - 7687:7687
+
+  springboot:
+    image: devkimm/springboot-nosql:latest
+    container_name: springboot-mongo
+    ports:
+      - 8080:8080
+    links:
+      - mongodb
+#      - neo4jdb
