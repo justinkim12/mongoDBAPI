@@ -72,6 +72,7 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/springboot-nosql:latest
             docker stop $(docker ps -a -q)
             docker rm mongodb
+            docker rm neo4jdb
             
             docker run -d --name mongodb -p 27017:27017 -v mongo_data:/data/db mongo:3.2.4
             docker run --name neo4jdb -p 7474:7474 -p 7687:7687 -v neo4j_data:/data/db -e NEO4J_dbms_security_auth__enabled=false -d neo4j:latest
