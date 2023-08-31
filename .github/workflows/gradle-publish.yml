@@ -37,7 +37,14 @@ jobs:
     #build를 위한 권한 추가
     - name: Run chmod to make gradlew executable
       run: chmod +x ./gradlew
-      
+
+    #YML Setting
+    - name: Set YML
+      run: |
+        mkdir -p src/test/resources
+        echo "${{ secrets.APPLICATION_TEST_YML }}" | base64 --decode > src/test/resources/application.yml
+        find src
+
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
