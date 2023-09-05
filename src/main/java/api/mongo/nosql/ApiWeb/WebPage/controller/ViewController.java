@@ -27,7 +27,7 @@ public class ViewController {
     @GetMapping
     public String home(){
         log.info("Home");
-        return "/form/index";
+        return "form/index";
     }
 
     @GetMapping("/search")
@@ -42,13 +42,13 @@ public class ViewController {
             model.addAttribute("movies",new ArrayList<>());
         }
         log.info("Search");
-        return "/form/search";
+        return "form/search";
     }
 
     @GetMapping("/{movieId}")
     public String moviePage(@PathVariable String movieId, Model model) throws CollectionException {
         MovieDTO movie = movieService.getSingleMovie(movieId);
         model.addAttribute("item", movie);
-        return "/form/item";
+        return "form/item";
     }
 }
