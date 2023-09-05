@@ -17,4 +17,4 @@ spring:
       org:
         springframework:
           data:
-            neo4j: DEBUG # 내부적으로 돌아가는 native cyperQuery를 로그로 찍어준다. 꼭 설정해주자.
+            neo4j: DEBUG #내부적으로 돌아가는 native cyperQuery를 로그로 찍어준다. 꼭 설정해주자.

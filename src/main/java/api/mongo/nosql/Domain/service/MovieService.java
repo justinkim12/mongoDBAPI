@@ -76,4 +76,9 @@ public class MovieService {
             throw new CollectionException(CollectionException.NotFoundException(id));
         }
     }
+
+    public List<MovieDTO> searchByTitle(String title) {
+        List<MovieDTO> movieDTOList = repository.findByTitleLikeIgnoreCase(title);
+        return movieDTOList;
+    }
 }
